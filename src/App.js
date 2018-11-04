@@ -15,6 +15,24 @@ const magazines = [
 localStorage.setItem('magazines', JSON.stringify(magazines));
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      magazines: []
+    }
+  }
+
+  getMagazines() {
+    const magazines = JSON.parse(localStorage.getItem('magazines'));
+    console.log(magazines);
+    this.setState({magazines: magazines})
+  }
+
+  componentWillMount() {
+    this.getMagazines();
+  }
+
   render() {
     return (
       <div className="App">
