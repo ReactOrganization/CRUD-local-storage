@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import MagazineItem from './components/MagazineItem'
 
 const magazines = [
   {
@@ -28,7 +29,7 @@ class App extends Component {
     console.log(magazines);
     this.setState({magazines: magazines})
   }
-
+  
   componentWillMount(){
     this.getMagazines();
   }
@@ -40,9 +41,7 @@ class App extends Component {
       {
         this.state.magazines.map(x => {
           return(
-            <div key={x.title}>
-              {x.title} {x.year} 
-            </div>
+              <MagazineItem {...x}/>
           )
         })
       }
