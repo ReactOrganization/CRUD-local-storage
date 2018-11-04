@@ -29,13 +29,23 @@ class App extends Component {
     this.setState({magazines: magazines})
   }
 
-  componentWillMount() {
+  componentWillMount(){
     this.getMagazines();
   }
 
   render() {
     return (
       <div className="App">
+      <h1>Magazines</h1>
+      {
+        this.state.magazines.map(x => {
+          return(
+            <div key={x.title}>
+              {x.title} {x.year} 
+            </div>
+          )
+        })
+      }
       </div>
     );
   }
