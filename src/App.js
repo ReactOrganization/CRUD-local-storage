@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MagazineItem from './components/MagazineItem'
+import ControlledInput from './components/ControlledInput'
 
 const magazines = [
   {
@@ -37,14 +38,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <h1>Magazines</h1>
-      {
-        this.state.magazines.map(x => {
-          return(
-              <MagazineItem {...x}/>
-          )
-        })
-      }
+        <h1>Magazines</h1>
+        {
+          this.state.magazines.map(x => {
+            return(
+                <MagazineItem {...x}/>
+            )
+          })
+        }
+        <ControlledInput />
       </div>
     );
   }
